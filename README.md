@@ -2,7 +2,7 @@
   <img src="src/UluBilge.Api/MCP/UluBilgePlugin/assets/icon.png" alt="UluBilge logosu" width="96">
 </p>
 
-# UluBilge
+# Ulu Bilge
 
 **SQL Server verilerinize doğal dille soru sorun.**
 
