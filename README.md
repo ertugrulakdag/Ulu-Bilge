@@ -153,16 +153,6 @@ flowchart LR
 
 Proje bağımlılıkları `Api → App → Data → Core` yönündedir. Handler ve repository kayıtları Scrutor ile otomatik yapılır; bağlantı ve transaction yönetimi decorator'larla uygulanır.
 
-## Testler
-
-SQL Server veya çalışan API gerektirmeyen SQL doğrulama ve yemek menüsü testleriyle başlayabilirsiniz:
-
-```powershell
-dotnet test test/UluBilge.Test/UluBilge.Test.csproj -c Release --filter "FullyQualifiedName~GenericReportSqlValidatorTests|FullyQualifiedName~FoodQueryTests|FullyQualifiedName~FoodMcpTests"
-```
-
-Diğer testlerin bağlantı ve ortam gereksinimleri [test rehberinde](test/UluBilge.Test/README.md), manuel API istekleri [Bruno koleksiyonunda](test/UluBilge.Bruno) bulunur.
-
 ## Yayın ayarları
 
 - **Derleme ve ortam:** Release derlemesi ve Production ortamı kullanın. Debug derlemelerinde `RoleAuthorize` kullanılan REST endpoint'lerinde kimlik ve rol kontrolleri atlanır; MCP erişim kontrolleri her derlemede uygulanır.
