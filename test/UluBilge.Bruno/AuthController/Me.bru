@@ -1,0 +1,24 @@
+meta {
+  name: Me
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseURL}}/v1/Auth/Me
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~test: 11
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,26 @@
+meta {
+  name: GetFoods
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseURL}}/v1/Food/GetFoods?Period=day&Language=tr
+  body: none
+  auth: bearer
+}
+
+params:query {
+  Period: day
+  Language: tr
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  forwardAuthorizationHeader: false
+}

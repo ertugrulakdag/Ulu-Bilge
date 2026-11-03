@@ -1,0 +1,37 @@
+meta {
+  name: Login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseURL}}/v1/Auth/Login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "userName": "admin",
+    "password": "admin"
+  }
+}
+
+tests {
+  const body = res.getBody();
+  const json = typeof body === "string" ? JSON.parse(body) : body;
+  
+  const accessToken = json?.data?.accessToken;
+  const refreshToken = json?.data?.refreshToken;
+  if (res.getStatus() !== 200 || !accessToken || !refreshToken){
+    throw new Error("Giris basarisiz veya tokenlar eksik");
+  } 
+  
+  bru.setEnvVar("accessToken", accessToken);
+  bru.setEnvVar("refreshToken", refreshToken);
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "ulubilge": {
+      "type": "streamable-http",
+      "url": "https://ulubilge.uretimsistemi.com/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "dcr"
+            },
+            "registrationUrl": "https://ulubilge.uretimsistemi.com/oauth/register",
+            "baseScopes": ["mcp:tools", "offline_access"]
+          }
+        }
+      }
+    }
+  }
+}
